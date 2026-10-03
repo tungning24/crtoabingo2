@@ -6,7 +6,7 @@ const ASSETS = [
   '/crtoabingo2/index.html',
   '/crtoabingo2/styles.css',
   '/crtoabingo2/script.js',
-  '/crtoabingo2/manifest.json',
+  '/crtoabingo2/manifest.webmanifst',
   '/crtoabingo2/icon-192.png',
   '/crtoabingo2/icon-512.png'
 ];
