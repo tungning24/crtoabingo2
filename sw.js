@@ -1,12 +1,14 @@
-const CACHE_NAME = 'crtoabingo2-v2';
+const CACHE_NAME = 'crtoabingo2-v3'; // 💡 อัปเดตเวอร์ชันแคชด้วย
 
+// 💡 เปลี่ยนเป็น Path เต็ม เพื่อไม่ให้ Chrome หลงทางบน GitHub Pages
 const ASSETS = [
-  './index.html',
-  './styles.css',
-  './script.js',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  '/crtoabingo2/',
+  '/crtoabingo2/index.html',
+  '/crtoabingo2/styles.css',
+  '/crtoabingo2/script.js',
+  '/crtoabingo2/manifest.json',
+  '/crtoabingo2/icon-192.png',
+  '/crtoabingo2/icon-512.png'
 ];
 
 // เก็บไฟล์ลง cache ตั้งแต่ตอนติดตั้ง เพื่อให้เปิด offline ได้
@@ -31,7 +33,6 @@ self.addEventListener('activate', event => {
 });
 
 // ไปหาเน็ตก่อน แล้วค่อยใช้ cache เมื่อเน็ตล่ม
-// ใช้กับหน้าเว็บและ manifest.json เพราะ Chrome ต้องเห็น manifest ล่าสุดเสมอ
 function networkFirst(request, isNavigation) {
   return fetch(request)
     .then(response => {
@@ -41,7 +42,8 @@ function networkFirst(request, isNavigation) {
     })
     .catch(() =>
       caches.match(request).then(cached =>
-        cached || (isNavigation ? caches.match('./index.html') : Response.error())
+        // 💡 เปลี่ยนตรงนี้เป็น Path เต็ม เพื่อแก้เคสเปิดแอปออฟไลน์ไม่ได้
+        cached || (isNavigation ? caches.match('/crtoabingo2/index.html') : Response.error())
       )
     );
 }
@@ -67,7 +69,6 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
 
-  // ข้าม request ที่ไม่ใช่ GET หรือเป็นของคนอื่น (cross-origin)
   if (request.method !== 'GET' || url.origin !== self.location.origin) {
     return;
   }

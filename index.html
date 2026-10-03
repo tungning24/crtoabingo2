@@ -25,14 +25,13 @@
 	<script>
 	if ("serviceWorker" in navigator) {
 	  window.addEventListener("load", () => {
-		// เปลี่ยนเป็น /sw.js และใส่ scope: '/' เพื่อให้ครอบคลุมทั้งเว็บไซต์
-		navigator.serviceWorker.register("/sw.js", { scope: "/" })
+		// ใส่ชื่อโฟลเดอร์โปรเจกต์ของคุณนำหน้า
+		navigator.serviceWorker.register("/crtoabingo2/sw.js", { scope: "/crtoabingo2/" })
 		  .then((reg) => {
-			console.log("Service Worker รีจิสเตอร์สำเร็จ: ", reg.scope);
+			console.log("Service Worker Registered for scope: ", reg.scope);
 		  })
 		  .catch((error) => {
-			// ห้ามปล่อยว่าง เพื่อให้เราเห็นว่ามันพังเพราะอะไร
-			console.error("Service Worker รีจิสเตอร์ล้มเหลว: ", error);
+			console.error("Registration failed: ", error);
 		  });
 	  });
 	}
