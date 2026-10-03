@@ -1,7 +1,6 @@
 const CACHE_NAME = 'crtoabingo2-v1';
 
 const ASSETS = [
-  './',
   './index.html',
   './styles.css',
   './script.js',
