@@ -1,12 +1,13 @@
 {
-  "name": "CRToA Bingo 2",
-  "short_name": "CRToABingo2",
+  "id": "./",
+  "name": "CRToA Bingo",
+  "short_name": "CRToABingo",
   "description": "กระดานบิงโกพร้อม AI แนะนำตาต่อไป",
-  "start_url": "/crtoabingo2/",
-  "scope": "/crtoabingo2/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#2727de",
-  "theme_color": "#2727de",
+  "background_color": "#de2727",
+  "theme_color": "#de2727",
   "icons": [
     {
       "src": "./icon-192.png",
